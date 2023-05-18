@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "title": "Custom Hat",
+        "description": "Commission your own custom Hat :3",
+        "list": "Choose your own Size, Ear Length, Color, Yarn Weight, Distressing, Accessories, and More!",
+        "image": "assetts/shop/hatcustom.jpg",
+        "type": "hat"
+    },
+    {
+        "id": "2",
+        "title": "Custom Top",
+        "description": "Commission your own custom Top :3",
+        "list": "Choose your own Size, Color, Yarn Weight, Distressing, Accessories, and More!",
+        "image": "assetts/shop/top1.jpg",
+        "type": "top"
+    },
+    {
+        "id": "3",
+        "title": "Custom Balaclava",
+        "description": "Commission your own custom Balaclava/Mask :3",
+        "list": "Choose your own Size, Color, Yarn Weight, Distressing, Accessories, and More!",
+        "image": "assetts/shop/balaclava.jpg",
+        "type": "top"
+    },
+    {
+        "id": "4",
+        "title": "Custom Ugly Doll",
+        "description": "Commission your own custom Ugly Doll :3",
+        "list": "Choose your own Base Doll, Clothing, Colors, Yarn Weight, Distressing, Accessories, and More!",
+        "image": "assetts/shop/doll.jpg",
+        "type": "top"
+    },
+    {
+        "id": "5",
+        "title": "Custom Bag",
+        "description": "Commission your own custom Tote Bag :3",
+        "list": "Choose your own Size, Color, Theme, Yarn Weight, Distressing, Accessories, and More!",
+        "image": "assetts/shop/buddybag.png",
+        "type": "top"
+    },
+    {
+        "id": "6",
+        "title": "Custom Piece",
+        "description": "Commission your own custom Piece :3",
+        "list": "The Opportunities are endless! Design the custom crochet piece of your dreams and we will make it happen!",
+        "image": "assetts/shop/egg.jpg",
+        "type": "top"
+    }
+]

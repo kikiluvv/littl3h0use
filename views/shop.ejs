@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/shop.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/background.css">
+  <link rel="stylesheet" href="/css/transition.css">
+  <title>littl3h0use ♡</title>
+  <!--Remix Icons-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <title>My Shop</title>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-wrapper">
+      <div class="logo-container">
+        <img class="logo" src="/assetts/global/logo.gif">
+      </div>
+      <div class="nav-list">
+        <div class="nav-list-child" id="nav1">
+          <div class="btn-contain">
+            <button id="btn1" class="btn" data-redirect="/">Home</button>
+            <div class="btn-particles"></div>
+          </div>
+        </div>
+        <div class="nav-list-child" id="nav2">
+          <div class="btn-contain">
+            <button id="btn2" class="btn" data-redirect="/shop">Shop</button>
+            <div class="btn-particles"></div>
+          </div>
+        </div>
+        <div class="nav-list-child" id="nav3">
+          <div class="btn-contain">
+            <button id="btn3" class="btn" data-redirect="/customs">Customs</button>
+            <div class="btn-particles"></div>
+          </div>
+        </div>
+        <div class="nav-list-child" id="nav4">
+          <div class="btn-contain">
+            <button id="btn4" class="btn" data-redirect="/gallery">Gallery</button>
+            <div class="btn-particles"></div>
+        </div>
+        </div>
+        <div class="nav-list-child" id="nav5">
+          <div class="btn-contain">
+            <button id="btn5" class="btn" data-redirect="/contact">Contact</button>
+            <div class="btn-particles"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="shop-wrapper">
+      <% for (let i = 0; i < items.length; i++) { %>
+        <% if (i % 4 === 0) { %>
+          <div class="shop-row">
+        <% } %>
+        <div class="row-child">
+          <div class="image-container">
+            <img class="child-img" src="<%= items[i].image %>" data-index="<%= i %>">
+            <% if (items[i].availability === 'sold') { %>
+              <div class="sold-overlay">Sold!</div>
+            <% } %>
+            <img class="child-measure-img" src="<%= items[i].measure %>" data-index="<%= i %>">
+          </div>
+        </div>
+        <% if (i % 4 === 3 || i === items.length - 1) { %>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+    
+
+    <div id="popup-wrapper" style="display: none;">
+      <div id="popup" class="popup">
+        <div class="popup-left">
+          <img id="popup-img">
+        </div>
+        <div class="popup-right">
+          <h2 id="popup-title"></h2>
+          <p id="popup-description"></p>
+          <hr class="popup-hr">
+          <p id="popup-size"></p>
+          <p id="popup-price"></p>
+          <hr class="popup-hr">
+          <div class="popup-btn-wrapper">
+            <div class="pop-btn-contain">
+              <button id="pop-btn" class="pop-btn">Buy!</button>
+              <div class="btn-particles">
+              </div>
+            </div>
+          </div>
+          <button id="popup-close" class="popup-close">
+            <i class="ri-close-line ri-2x"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.row-child').hover(
+        function () {
+          $(this).find('.child-img').hide();
+          $(this).find('.child-measure-img').show();
+        },
+        function () {
+          $(this).find('.child-measure-img').hide();
+          $(this).find('.child-img').show();
+        }
+      );
+    });
+  </script>
+  <script src="/js/button.js"></script>
+  <script src="/js/shop.js"></script>
+  <script src="/js/transition.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+/* Nav Wrapper intro animation */
+.nav-wrapper {
+    -webkit-animation: navWrapIn 0.5s ease forwards;
+    animation: navWrapIn 0.5s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@-webkit-keyframes navWrapIn {
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+    50% {
+        -webkit-transform: translateY(17vh);
+        transform: translateY(17vh);
+    }
+    100% {
+        -webkit-transform: translateY(15vh);
+        transform: translateY(15vh);
+    }
+}
+@keyframes navWrapIn {
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+    50% {
+        -webkit-transform: translateY(17vh);
+        transform: translateY(17vh);
+    }
+    100% {
+        -webkit-transform: translateY(15vh);
+        transform: translateY(15vh);
+    }
+}
+
+/* Nav child animation IDs */
+#nav1{
+    -webkit-animation: navslide 0.5s ease-in-out both;
+    animation: navslide 0.5s ease-in-out both;
+    animation-delay: 0.2s;
+}
+#nav2{
+    -webkit-animation: navslide 0.5s ease-in-out both;
+    animation: navslide 0.5s ease-in-out both;
+    animation-delay: 0.3s;
+}
+#nav3{
+    -webkit-animation: navslide 0.5s ease-in-out both;
+    animation: navslide 0.5s ease-in-out both;
+    animation-delay: 0.4s;
+}
+#nav4{
+    -webkit-animation: navslide 0.5s ease-in-out both;
+    animation: navslide 0.5s ease-in-out both;
+    animation-delay: 0.5s;
+}
+#nav5{
+    -webkit-animation: navslide 0.5s ease-in-out both;
+    animation: navslide 0.5s ease-in-out both;
+    animation-delay: 0.6s;
+}
+
+/* Nav Child Animation */
+@-webkit-keyframes navslide { /* These translate the nav buttons into view */
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+    50% {
+        -webkit-transform: translateY(75vh);
+        transform: translateY(75vh);
+    }
+    100% {
+        -webkit-transform: translateY(70vh);
+        transform: translateY(70vh);
+    }
+}
+@keyframes navslide {
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+    50% {
+        -webkit-transform: translateY(75vh);
+        transform: translateY(75vh);
+    }
+    100% {
+        -webkit-transform: translateY(70vh);
+        transform: translateY(70vh);
+    }
+}
+
+/* Control the Shop Row animation */
+
+@-webkit-keyframes childslidein { /* These translate the shop rows into view */
+    0% {
+        -webkit-transform: translateX(0vh);
+        transform: translateX(0vh);
+    }
+
+    50% {
+        
+        -webkit-transform: translateX(205vh);
+        transform: translateX(205vh);
+    }
+
+    100% {
+        -webkit-transform: translateX(200vh);
+        transform: translateX(200vh);
+    }
+}
+
+@keyframes childslidein {
+    0% {
+        -webkit-transform: translateX(0vh);
+        transform: translateX(0vh);
+    }
+    50% {
+        
+        -webkit-transform: translateX(205vh);
+        transform: translateX(205vh);
+    }
+    100% {
+        -webkit-transform: translateX(200vh);
+        transform: translateX(200vh);
+    }
+}
+
+@-webkit-keyframes childslidein2 {
+    0% {
+        -webkit-transform: translateX(200vh);
+        transform: translateX(200vh);
+    }
+    50% {
+        
+        -webkit-transform: translateX(-205vh);
+        transform: translateX(-205vh);
+    }
+    100% {
+        -webkit-transform: translateX(-200vh);
+        transform: translateX(-200vh);
+    }
+}
+
+@keyframes childslidein2 {
+    0% {
+        -webkit-transform: translateX(200vh);
+        transform: translateX(200vh);
+    }
+
+    50% {
+        
+        -webkit-transform: translateX(-205vh);
+        transform: translateX(-205vh);
+    }
+
+    100% {
+        -webkit-transform: translateX(-200vh);
+        transform: translateX(-200vh);
+    }
+}
+
+/* Control Shop Row disappear animation */
+
+@keyframes row-1-out {
+    0% {
+        -webkit-transform: translateX(200vh);
+        transform: translateX(200vh);
+    }
+
+    100% {
+        -webkit-transform: translateX(0vh);
+        transform: translateX(0vh);
+    }
+}
+
+@keyframes row-2-out {
+    0% {
+        -webkit-transform: translateX(-200vh);
+        transform: translateX(-200vh);
+    }
+
+    100% {
+        -webkit-transform: translateX(200vh);
+        transform: translateX(200vh);
+    }
+}
+
+/* Control Page Content Disappear animation */
+
+.pagewipe {
+    -webkit-animation: pagewipe 0.5s ease-in-out both;
+    animation: pagewipe 1s ease-in-out both;
+    animation-delay: 0.1s;
+}
+
+@-webkit-keyframes pagewipe {
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+    25% {
+        -webkit-transform: translateY(-5vh);
+        transform: translateY(-5vh);
+    }
+    100% {
+        -webkit-transform: translateY(120vh);
+        transform: translateY(120vh);
+    }
+}
+@keyframes pagewipe {
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+    25% {
+        -webkit-transform: translateY(-5vh);
+        transform: translateY(-5vh);
+    }
+    100% {
+        -webkit-transform: translateY(120vh);
+        transform: translateY(120vh);
+    }
+}
+
+/* Control Nav Wrapper Disappear Animation */
+
+.reverse-nav {
+    -webkit-animation: navWrapOut 0.5s ease forwards;
+    animation: navWrapOut 0.5s ease forwards;
+}
+
+@-webkit-keyframes navWrapOut {
+    0% {
+        -webkit-transform: translateY(15vh);
+        transform: translateY(15vh);
+    }
+    50% {
+        -webkit-transform: translateY(17vh);
+        transform: translateY(17vh);
+    }
+    100% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes navWrapOut {
+    0% {
+        -webkit-transform: translateY(15vh);
+        transform: translateY(15vh);
+    }
+    50% {
+        -webkit-transform: translateY(17vh);
+        transform: translateY(17vh);
+    }
+    100% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+}
+
+
+
+
+
+

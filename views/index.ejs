@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <title>littl3h0use ♡</title>
+    <!--Remix Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="landing1" class="landing">
+            <div class="login-container">
+                <div class="btn-contain">
+                    <button id="btn0" class="btn" data-redirect="/login">Login</button>
+                    <div class="btn-particles"></div>
+                </div>
+            </div>
+            <img class="logo" src="/assetts/global/logo.gif" alt="Little house on grassy hill with shooting stars.">
+            <img class="slide-top" src="/assetts/global/text.png" alt="Little House Text">
+            <div class="nav">
+                <div class="nav-child" id="nav1">
+                    <div class="btn-contain">
+                        <button id="btn1" class="btn" data-redirect="/shop">Shop</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-child" id="nav2">
+                    <div class="btn-contain">
+                        <button id="btn2" class="btn" data-redirect="/customs">Customs</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-child" id="nav3">
+                    <div class="btn-contain">
+                        <button id="btn3" class="btn" data-redirect="/gallery">Gallery</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-child" id="nav4">
+                    <div class="btn-contain">
+                        <button id="btn4" class="btn" data-redirect="/contact">Contact</button>
+                        <div class="btn-particles"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function transitionOut() {
+            var buttons = document.querySelectorAll(".btn");
+            var landing = document.getElementById("landing1");
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    var redirectUrl = button.dataset.redirect;
+                    landing.classList.add("pagewipe");
+                    var animationDuration = 2000;
+                    setTimeout(function () {
+                        window.location.href = redirectUrl;
+                    }, animationDuration);
+                });
+            });
+        }
+        transitionOut();
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/js/button.js"></script>
+</body>
+
+</html>

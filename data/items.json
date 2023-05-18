@@ -1,0 +1,96 @@
+[
+  {
+    "id": "1",
+    "title": "Mustard Cat Beanie",
+    "description": "Hand-Made crochet beanie with cute lil cat ears :3",
+    "size": "10.5in",
+    "price": "$28",
+    "image": "assetts/shop/hat1.jpg",
+    "measure": "assetts/shop/hat1measure.jpg",
+    "availability": "available",
+    "type": "hat",
+    "link": "https://www.depop.com/products/littl3h0use-mustard-crochet-cat-beanie/"
+  },
+  {
+    "id": "2",
+    "title": "Gray Cat Beanie",
+    "description": "Hand-Made crochet beanie with cute lil cat ears :3",
+    "size": "12in",
+    "price": "$28",
+    "image": "assetts/shop/hat2.jpg",
+    "measure": "assetts/shop/hat2measure.jpg",
+    "availability": "available",
+    "type": "hat",
+    "link": "https://www.depop.com/products/littl3h0use-handmade-cat-hat-handmade/"
+  },
+  {
+    "id": "3",
+    "title": "Green Cat Beanie",
+    "description": "Hand-Made crochet beanie with cute lil cat ears :3",
+    "size": "10in",
+    "price": "$28",
+    "image": "assetts/shop/hat3.png",
+    "measure": "assetts/shop/hat3measure.png",
+    "availability": "available",
+    "type": "hat",
+    "link": "https://www.depop.com/products/littl3h0use-green-crochet-beanie/"
+  },
+  {
+    "id": "4",
+    "title": "Green Velvet Cat Beanie",
+    "description": "Super soft Hand-Made crochet beanie with cute lil cat ears :3",
+    "size": "12in",
+    "price": "$28",
+    "image": "assetts/shop/catgreenvelvet.png",
+    "measure": "assetts/shop/catgreenvelvetmeasure.png",
+    "availability": "available",
+    "type": "hat",
+    "link": "https://www.depop.com/products/littl3h0use-green-velvety-crochet-cat-hat/"
+  },
+  {
+    "id": "5",
+    "title": "Tan Cat Beanie",
+    "description": "Hand-Made crochet beanie with cute lil cat ears :3",
+    "size": "26in",
+    "price": "$28",
+    "image": "assetts/shop/catbrown.jpg",
+    "measure": "assetts/shop/catbrownmeasure.jpg",
+    "availability": "sold",
+    "type": "hat",
+    "link": ""
+  },
+  {
+    "id": "6",
+    "title": "Multi Color Top",
+    "description": "Hand-Made crochet top, Not for big bust :3",
+    "size": "12in",
+    "price": "$28",
+    "image": "assetts/shop/top1.jpg",
+    "measure": "assetts/shop/top1measure.jpg",
+    "availability": "available",
+    "type": "top",
+    "link": "https://www.depop.com/products/littl3h0use-handmade-crop-top-26-around/"
+  },
+  {
+    "id": "7",
+    "title": "Coming Soon...",
+    "description": "New items dropping soon! Join the Newsletter for updates! :3",
+    "size": "",
+    "price": "",
+    "image": "assetts/shop/placeholder.jpg",
+    "measure": "assetts/shop/placeholder.jpg",
+    "type": "placeholder",
+    "link": ""
+  },
+  {
+    "id": "8",
+    "title": "Coming Soon...",
+    "description": "New items dropping soon! Join the Newsletter for updates! :3",
+    "size": "",
+    "price": "",
+    "image": "assetts/shop/placeholder.jpg",
+    "measure": "assetts/shop/placeholder.jpg",
+    "type": "placeholder",
+    "link": ""
+  }
+]

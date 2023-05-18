@@ -1,0 +1,71 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <title>littl3h0use ♡</title>
+    <!--Remix Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="login-wrapper">
+            <div class="login-form">
+                <h1 class="header">Login</h1>
+                <form id="form" action="/authenticate" method="POST">
+                    <input type="text" id="username" name="username" placeholder="Username"><br>
+                    <input type="password" id="password" name="password" placeholder="Password"><br>
+                    <div class="btn-contain">
+                        <input type="submit" class="btn" value="Login" id="submit">
+                        <div class="btn-particles"></div>
+                    </div>
+                </form>
+                <div class="btn-contain">
+                    <button id="home-btn" class="btn" data-redirect="/">Home</button>
+                    <div class="btn-particles"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--JQuery and Script Link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/js/button.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#home-btn').click(function () {
+                var redirectUrl = $(this).data('redirect');
+                window.location.href = redirectUrl;
+            });
+        });
+
+    </script>
+</body>
+
+</html>

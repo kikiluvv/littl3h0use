@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <title>littl3h0use ♡</title>
+    <!--Remix Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-wrapper">
+            <div class="welcome-container">
+                <h1 class="header-text">
+                    Welcome Back Emmy
+                </h1>
+            </div>
+            <div class="nav-list">
+                <div class="nav-child">
+                    <div class="btn-contain">
+                        <button id="btn1" class="btn" data-redirect="/contact">Help</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-child">
+                    <div class="btn-contain">
+                        <button id="btn2" class="btn" data-redirect="/logout">Logout</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="left">
+                <div class="control-wrapper">
+                    <form id="add-item" action="/dashboard/add-item" method="POST" enctype="multipart/form-data">
+                        <h2 style="text-decoration: underline;">Add Item</h2>
+                        <div class="input-wrapper">
+                            <input class="input" type="number" name="id" placeholder="ID" required>
+                            <input class="input" type="text" name="title" placeholder="Title" required>
+                            <input class="input" type="text" name="description" placeholder="Description" required>
+                            <input class="input" type="number" name="price" placeholder="Price" required>
+                            <input class="input" type="text" name="size" placeholder="Size" required>
+                            <input class="input" type="text" name="type" placeholder="Type" required>
+                        </div>
+                        <div class="images-wrapper">
+                            <label for="image">Item Image</label>
+                            <input class="input" type="file" name="image" required>
+                            <label for="measure">Item Measure Image</label>
+                            <input class="input" type="file" name="measure" required>
+                        </div>
+                        <div class="button-wrap">
+                            <button class="btn form-btn" id="add-btn" type="submit">Add Item</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="preview-wrapper">
+                    <div class="preview-container">
+                        <h2 class="preview-header">New Item Preview</h2>
+                        <div id="add-preview" class="preview">
+                            <div class="preview-left">
+                                <img id="preview-img" src="/assetts/shop/placeholder.jpg">
+                            </div>
+                            <div class="preview-right">
+                                <h2 id="preview-title"></h2>
+                                <p id="preview-description"></p>
+                                <hr class="preview-hr">
+                                <p id="preview-size"></p>
+                                <p id="preview-price"></p>
+                                <hr class="preview-hr">
+                                <div class="preview-btn-wrapper">
+                                    <div class="preview-btn-contain">
+                                        <button class="preview-btn">Buy!</button>
+                                        <div class="btn-particles">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="control-wrapper">
+                    <form id="edit-item" action="/dashboard/edit-item" method="POST">
+                        <h2 style="text-decoration: underline;">Edit Item</h2>
+                        <div class="input-wrapper">
+                            <input class="input" type="number" name="itemId" placeholder="Item ID" required>
+                            <input class="input" type="text" name="name" placeholder="New Item Name">
+                            <input class="input" type="text" name="description" placeholder="New Description"></input>
+                            <input class="input" type="number" name="price" placeholder="New Price">
+                            <input class="input" type="number" name="size" placeholder="New Size">
+                            <input class="input" type="text" name="type" placeholder="New Type">
+                        </div>
+                        <div class="images-wrapper">
+                            <label for="image">New Image</label>
+                            <input class="input" type="file" name="image" required>
+                            <label for="measure">New Measure Image</label>
+                            <input class="input" type="file" name="measure" required>
+                        </div>
+                        <div class="button-wrap">
+                            <button class="btn form-btn" id="edit-btn" type="submit">Edit Item</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="preview-wrapper">
+                    <div class="preview-container">
+                        <h2 class="preview-header">Edited Item Preview</h2>
+                    </div>
+                </div>
+
+                <div class="control-wrapper">
+                    <form id="remove-item" action="/dashboard/remove-item" method="POST">
+                        <h2 style="text-decoration: underline;">Remove Item</h2>
+                        <input type="text" name="itemId" placeholder="Item ID" required>
+                        <div class="button-wrap">
+                            <button class="btn form-btn" id="edit-btn" type="submit">Remove Item</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="preview-wrapper">
+                    <div class="preview-container">
+                        <h2 class="preview-header">Removed Item Preview</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="help-wrapper">
+               <div class="help-popup">
+                    <div class="add-help">
+
+                    </div>
+                    <div class="edit-help">
+
+                    </div>
+                    <div class="remove-help">
+
+                    </div>
+               </div>
+            </div>
+    </div>
+    <script src="/js/button.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn2').click(function () {
+                var redirectUrl = $(this).data('redirect');
+                window.location.href = redirectUrl;
+            });
+        });
+
+    </script>
+    <script>
+        // Get references to the form and preview elements
+        const form = document.getElementById('add-item');
+        const previewImg = document.getElementById('preview-img');
+        const previewTitle = document.getElementById('preview-title');
+        const previewDescription = document.getElementById('preview-description');
+        const previewSize = document.getElementById('preview-size');
+        const previewPrice = document.getElementById('preview-price');
+
+        // Listen for form input changes
+        form.addEventListener('input', updatePreview);
+
+        // Update the preview based on form input
+        function updatePreview() {
+            // Capture form data using FormData
+            const formData = new FormData(form);
+
+            // Get the values from the form inputs
+            const title = formData.get('title');
+            const description = formData.get('description');
+            const size = formData.get('size');
+            const price = formData.get('price');
+            const imageFile = formData.get('image');
+
+            // Update the preview elements with the form values
+            previewTitle.textContent = title;
+            previewDescription.textContent = description;
+            previewSize.textContent = `Size: ${size}`;
+            previewPrice.textContent = `Price: $${price}`;
+
+            // Update the preview image if a file is selected
+            if (imageFile && imageFile.size > 0) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    previewImg.src = e.target.result;
+                };
+
+                reader.readAsDataURL(imageFile);
+            } else {
+                // Use a placeholder image if no file is selected
+                previewImg.src = '/assetts/shop/placeholder.jpg';
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

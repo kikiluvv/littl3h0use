@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <link rel="stylesheet" href="/css/transition.css">
+    <title>littl3h0use ♡</title>
+    <!--Remix Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>My Shop</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-wrapper">
+            <div class="logo-container">
+                <img class="logo" src="/assetts/global/logo.gif">
+            </div>
+            <div class="nav-list">
+                <div class="nav-list-child" id="nav1">
+                    <div class="btn-contain">
+                        <button id="btn1" class="btn" data-redirect="/">Home</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-list-child" id="nav2">
+                    <div class="btn-contain">
+                        <button id="btn2" class="btn" data-redirect="/shop">Shop</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-list-child" id="nav3">
+                    <div class="btn-contain">
+                        <button id="btn3" class="btn" data-redirect="/customs">Customs</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-list-child" id="nav4">
+                    <div class="btn-contain">
+                        <button id="btn4" class="btn" data-redirect="/gallery">Gallery</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+                <div class="nav-list-child" id="nav5">
+                    <div class="btn-contain">
+                        <button id="btn5" class="btn" data-redirect="/contact">Contact</button>
+                        <div class="btn-particles"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="section" id="socials">
+                    <h2 class="section-header">Socials</h2>
+                    <div class="socials-list">
+                        <a class="icons" href="https://www.depop.com/littl3h0use/"><i
+                                class="ri-store-line"></i>Depop</a>
+                        <a class="icons" href="https://www.instagram.com/littl3h0use/"><i
+                                class="ri-instagram-line"></i>Instagram</a>
+                        <a class="icons" href="https://www.pinterest.com/littl3h0use/"><i
+                                class="ri-pinterest-line"></i>Pinterest</a>
+                        <a class="icons" href=""><i class="ri-youtube-line"></i>YouTube</a>
+                        <a class="icons" href=""><i class="ri-camera-lens-line"></i>VSCO</a>
+                        <a class="icons" href="https://open.spotify.com/user/emmagude?si=e87e5c85cdba46f9"><i
+                                class="ri-spotify-line"></i>Spotify</a>
+                        <a class="icons" href="https://on.soundcloud.com/rZBP4"><i
+                                class="ri-soundcloud-line"></i>Soundcloud</a>
+                        <a class="icons" href="https://discord.gg/WBEREuW582"><i class="ri-discord-line"></i>Discord</a>
+                        <a class="icons" href=""><i class="ri-github-fill"></i>GitHub</a>
+                        <a class="icons" href="mailto:littl3h0use.crochet@gmail.com"><i
+                                class="ri-mail-line"></i>Email</a>
+                    </div>
+                </div>
+                <div class="section" id="model">
+                    <model-viewer id="model-element" src="/assetts/contact/cat.glb" background-color="transparent" ar
+                        ar-modes="webxr scene-viewer quick-look" camera-controls poster="/assetts/contact/poster.webp"
+                        shadow-intensity="1" auto-rotate>
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                        <div id="ar-prompt">
+                            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                        </div>
+                    </model-viewer>
+                </div>
+                <div class="section" id="blog">
+                    <h2 class="section-header">Blog</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="section" id="support">
+                    <div class="support">
+                        <h2 class="section-header">Support</h2>
+                        <div class="links">
+                            <div id="link1" class="support-link">Order Support</div>
+                            <div id="link2" class="support-link">Track Your Order</div>
+                            <div id="link3" class="support-link" href="">FAQ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section" id="newsletter">
+                    <div class="newsletter">
+                        <form class="mail-form" name="newsletter" method="POST" data-netlify="true">
+                            <div class="content">
+                                <h3 class="selection-header">Join Our Newsletter!</h3>
+                                <input type="email" name="email" placeholder="example@website.com" required />
+                            </div>
+                            <div class="button">
+                                <button type="submit" class="btn" id="subbtn">Subscribe!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script>
+        // Handles loading the events for <model-viewer>'s slotted progress bar
+        const onProgress = (event) => {
+            const progressBar = event.target.querySelector('.progress-bar');
+            const updatingBar = event.target.querySelector('.update-bar');
+            updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
+            if (event.detail.totalProgress === 1) {
+                progressBar.classList.add('hide');
+                event.target.removeEventListener('progress', onProgress);
+            } else {
+                progressBar.classList.remove('hide');
+            }
+        };
+        document.querySelector('model-viewer').addEventListener('progress', onProgress);
+    </script>
+</body>
+
+</html>
