@@ -19,7 +19,6 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 15px;
 }
 
 .container {
@@ -27,7 +26,12 @@
     display: flex;
     width: 100%;
     height: 100%;
+    padding: 15px;
     justify-content: space-evenly;
+    -webkit-animation: containerslidein 0.5s ease forwards;
+    animation: containerslidein 0.5s ease forwards;
+    animation-delay: 0.3s;
+    bottom: -200vh;
 }
 
 .section {
@@ -37,10 +41,34 @@
     background-color: var(--section-bg);
     width: 30%;
     border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.section-bottom:hover,
+.section:hover {
+    transform: scale(1.05);
+}
+
+.section-header {
+    text-decoration: underline;
+    padding: 10px;
+}
+
+.section-bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--section-bg);
+    width: 47%;
+    border-radius: 15px;
+    transition: all 0.5s ease;
 }
 
 #model {
     background-color: #00000000;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
 }
 
 #model-element {
@@ -82,7 +110,7 @@
 }
 
 #ar-button {
-    background-image: url(/assetts/ar_icon.png);
+    background-image: url(/assetts/contact/ar_icon.png);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
@@ -154,4 +182,60 @@ model-viewer>#ar-prompt>img {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 5px;
+}
+
+.icons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+    width: 50%;
+}
+
+.icons i {
+    font-size: x-large;
+    margin-right: 1vw;
+}
+
+.links {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 5px;
+}
+
+.mail-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form-content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    width: 50%;
+}
+
+.form-btn-wrap{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+#form-btn {
+    width: 50%;
+    font-size: medium;
 }

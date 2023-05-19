@@ -1,19 +1,4 @@
-function animateShopRows() {
-  var rows = document.querySelectorAll('.shop-row');
-
-  rows.forEach(function (row, index) {
-    var animationClass = index % 2 === 0 ? 'shop-row-1' : 'shop-row-2'; // Find Index of Row and add correct animation
-
-    // Apply the animation class to the row
-    row.classList.add(animationClass);
-  });
-}
-
-
 document.addEventListener('DOMContentLoaded', function () {
-  // Call the animateShopRows function
-  animateShopRows();
-
   // Continue with the remaining code
   fetch('/data/items.json')
     .then(response => response.json())

@@ -1,12 +1,23 @@
+animateShopRows();
 
-  
-  function transitionOut() {
+function animateShopRows() {
+    var rows = document.querySelectorAll('.shop-row');
+
+    rows.forEach(function (row, index) {
+        var animationClass = index % 2 === 0 ? 'shop-row-1' : 'shop-row-2'; // Find Index of Row and add correct animation
+
+        // Apply the animation class to the row
+        row.classList.add(animationClass);
+    });
+}
+
+function transitionOut() {
     var nav = document.querySelector(".nav-wrapper");
     var logo = document.querySelector(".logo");
     var buttons = document.querySelectorAll(".btn");
     var wrapper = document.querySelector(".shop-wrapper");
 
-    logo.addEventListener("click", function() {
+    logo.addEventListener("click", function () {
         // Add the animation class
         wrapper.classList.add("pagewipe");
         nav.classList.add("reverse-nav");

@@ -73,6 +73,11 @@
     width: 25%;
     height: auto;
     padding: 15px;
+    transition: all 0.5s ease;
+}
+
+.row-child:hover {
+    transform: scale(1.05);
 }
 
 .image-container {

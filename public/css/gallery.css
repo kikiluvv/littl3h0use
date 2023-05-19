@@ -1,0 +1,13 @@
+/*----------------
+|  Root Styling  |
+----------------*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+:root {
+    --text-h: rgb(0, 0, 0);
+    --text-p: rgb(0, 0, 0);
+}

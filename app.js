@@ -7,10 +7,31 @@ const multer = require('multer');
 const { updateItems } = require('./updateItems');
 require('dotenv').config();
 const app = express();
+const helmet = require('helmet');
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public', { extensions: ['css'] }));
+
+// Use Helmet middleware with CSP configuration
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'", 'blob:'],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com', 'https://cdn.jsdelivr.net'],
+      scriptSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        'https://ajax.googleapis.com',
+        'https://code.jquery.com',
+        'https://unpkg.com',
+      ],
+      imgSrc: ["'self'", 'data:', 'https://modelviewer.dev'],
+    },
+  })
+);
+
 
 // Set up session middleware
 app.use(
@@ -20,6 +41,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+
 
 // Use body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -62,7 +85,6 @@ const upload = multer({
 });
 
 
-
 // Public Routes
 app.get('/', (req, res) => {
   res.render('index');
@@ -71,7 +93,6 @@ app.get('/', (req, res) => {
 app.get('/contact', (req, res) => {
   res.render('contact');
 });
-
 
 app.use('/data', express.static('data'));
 
@@ -102,6 +123,21 @@ app.get('/customs', (req, res) => {
 
     const items = JSON.parse(data);
     res.render('customs', { items });
+  });
+});
+
+app.get('/gallery', (req, res) => {
+  const filePath = path.join(__dirname, 'data', 'gallery.json');
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error reading JSON file');
+      return;
+    }
+
+    const items = JSON.parse(data);
+    res.render('gallery', { items });
   });
 });
 

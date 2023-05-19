@@ -69,13 +69,13 @@
                 </div>
                 <div class="nav-list-child" id="nav5">
                     <div class="btn-contain">
-                        <button id="btn5" class="btn" data-redirect="/contact">Contact</button>
+                        <button id="btn5" class="btn btn-active" data-redirect="/contact">Contact</button>
                         <div class="btn-particles"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="content-wrapper">
+        <div class="content-wrapper shop-wrapper">
             <div class="container">
                 <div class="section" id="socials">
                     <h2 class="section-header">Socials</h2>
@@ -118,25 +118,25 @@
                 </div>
             </div>
             <div class="container">
-                <div class="section" id="support">
+                <div class="section-bottom" id="support">
                     <div class="support">
                         <h2 class="section-header">Support</h2>
                         <div class="links">
-                            <div id="link1" class="support-link">Order Support</div>
-                            <div id="link2" class="support-link">Track Your Order</div>
-                            <div id="link3" class="support-link" href="">FAQ</div>
+                            <div id="link1" class="support-link" style="cursor: pointer;">Order Support</div>
+                            <div id="link2" class="support-link" style="cursor: pointer;">Track Your Order</div>
+                            <div id="link3" class="support-link" style="cursor: pointer;">FAQ</div>
                         </div>
                     </div>
                 </div>
-                <div class="section" id="newsletter">
+                <div class="section-bottom" id="newsletter">
                     <div class="newsletter">
+                        <h2 class="section-header">Join Our Newsletter!</h2>
                         <form class="mail-form" name="newsletter" method="POST" data-netlify="true">
-                            <div class="content">
-                                <h3 class="selection-header">Join Our Newsletter!</h3>
-                                <input type="email" name="email" placeholder="example@website.com" required />
+                            <div class="form-content">
+                                <input type="email" name="email" class="input" placeholder="youremail@email.com" required />
                             </div>
-                            <div class="button">
-                                <button type="submit" class="btn" id="subbtn">Subscribe!</button>
+                            <div class="form-btn-wrap">
+                                <button type="submit" class="btn" id="form-btn">Subscribe!</button>
                             </div>
                         </form>
                     </div>
@@ -160,6 +160,8 @@
         };
         document.querySelector('model-viewer').addEventListener('progress', onProgress);
     </script>
+    <script src="/js/transition.js"></script>
+    <script src="/js/button.js"></script>
 </body>
 
 </html>

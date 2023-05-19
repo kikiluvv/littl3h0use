@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/shop.css">
     <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/transition.css">
     <link rel="stylesheet" href="/css/background.css">
     <title>littl3h0use ♡</title>
     <!--Remix Icons-->
@@ -18,6 +19,80 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="page-wrapper">
+        <div class="background">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-wrapper">
+          <div class="logo-container">
+            <img class="logo" src="/assetts/global/logo.gif">
+          </div>
+          <div class="nav-list">
+            <div class="nav-list-child" id="nav1">
+              <div class="btn-contain">
+                <button id="btn1" class="btn" data-redirect="/">Home</button>
+                <div class="btn-particles"></div>
+              </div>
+            </div>
+            <div class="nav-list-child" id="nav2">
+              <div class="btn-contain">
+                <button id="btn2" class="btn" data-redirect="/shop">Shop</button>
+                <div class="btn-particles"></div>
+              </div>
+            </div>
+            <div class="nav-list-child" id="nav3">
+              <div class="btn-contain">
+                <button id="btn3" class="btn" data-redirect="/customs">Customs</button>
+                <div class="btn-particles"></div>
+              </div>
+            </div>
+            <div class="nav-list-child" id="nav4">
+              <div class="btn-contain">
+                <button id="btn4" class="btn btn-active" data-redirect="/gallery">Gallery</button>
+                <div class="btn-particles"></div>
+            </div>
+            </div>
+            <div class="nav-list-child" id="nav5">
+              <div class="btn-contain">
+                <button id="btn5" class="btn" data-redirect="/contact">Contact</button>
+                <div class="btn-particles"></div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="shop-wrapper">
+          <% for (let i = 0; i < items.length; i++) { %>
+            <% if (i % 6 === 0) { %>
+              <div class="shop-row">
+            <% } %>
+            <div class="row-child">
+              <div class="image-container">
+                <img class="child-img" src="<%= items[i].image %>" data-index="<%= i %>">
+                <% if (items[i].availability === 'sold') { %>
+                  <div class="sold-overlay">Sold!</div>
+                <% } %>
+                <img class="child-measure-img" src="<%= items[i].measure %>" data-index="<%= i %>">
+              </div>
+            </div>
+            <% if (i % 6 === 5 || i === items.length - 1) { %>
+              </div>
+            <% } %>
+          <% } %>
+        </div>
+    </div>
+    <script src="/js/button.js"></script>
+    <script src="/js/transition.js"></script>
 </body>
 </html>

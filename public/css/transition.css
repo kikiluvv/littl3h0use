@@ -161,6 +161,40 @@
     }
 }
 
+@-webkit-keyframes containerslidein { /* These translate the containers into view on contact page */
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+
+    50% {
+        
+        -webkit-transform: translateY(-205vh);
+        transform: translateY(-205vh);
+    }
+
+    100% {
+        -webkit-transform: translateY(-200vh);
+        transform: translateY(-200vh);
+    }
+}
+
+@keyframes containerslidein {
+    0% {
+        -webkit-transform: translateY(0vh);
+        transform: translateY(0vh);
+    }
+    50% {
+        
+        -webkit-transform: translateY(-205vh);
+        transform: translateY(-205vh);
+    }
+    100% {
+        -webkit-transform: translateY(-200vh);
+        transform: translateY(-200vh);
+    }
+}
+
 /* Control Shop Row disappear animation */
 
 @keyframes row-1-out {
