@@ -51,13 +51,13 @@
     "id": "5",
     "title": "Tan Cat Beanie",
     "description": "Hand-Made crochet beanie with cute lil cat ears :3",
-    "size": "26in",
+    "size": "12in",
     "price": "$28",
     "image": "assetts/shop/catbrown.jpg",
-    "measure": "assetts/shop/catbrownmeasure.jpg",
+    "measure": "assetts/shop/catbrownmeasure.png",
     "availability": "sold",
     "type": "hat",
-    "link": ""
+    "link": "https://www.depop.com/products/littl3h0use-green-velvety-crochet-cat-hat/"
   },
   {
     "id": "6",
@@ -92,5 +92,15 @@
     "measure": "assetts/shop/placeholder.jpg",
     "type": "placeholder",
     "link": ""
+  },
+  {
+    "id": "9",
+    "title": "hi",
+    "description": "wenis",
+    "price": "420",
+    "size": "420",
+    "image": "assetts/shop/1684537345589.JPG",
+    "measure": "assetts/shop/1684537345590.JPG",
+    "type": "hat"
   }
 ]

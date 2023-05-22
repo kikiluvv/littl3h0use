@@ -81,3 +81,5 @@ function closePopup() {
   document.querySelector('.nav-wrapper').classList.remove('popup-active');
   document.querySelector('.shop-wrapper').classList.remove('popup-active');
 }
+
+

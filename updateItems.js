@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to update the items.json file
+// Function to update the items.json file for the add items path
 function updateItems(newItem) {
   const filePath = path.join(__dirname, 'data', 'items.json');
 
@@ -28,4 +28,5 @@ function updateItems(newItem) {
 
 
 module.exports = { updateItems };
+
 

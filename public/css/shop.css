@@ -5,6 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
+    border: 0.5px solid red;
 }
 
 :root {
@@ -272,6 +273,5 @@
     animation: rainbow 2s infinite alternate;
     animation: fontsize 0.1s ease;
 }
-
 
 

@@ -36,7 +36,7 @@ app.use(
 // Set up session middleware
 app.use(
   session({
-    secret: process.env.SESSION_KEY, 
+    secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true,
   })
@@ -59,7 +59,7 @@ function requireAuth(req, res, next) {
 // Configure multer storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/assetts/shop'); 
+    cb(null, 'public/assetts/shop');
   },
   filename: (req, file, cb) => {
     const extension = path.extname(file.originalname);
@@ -79,7 +79,7 @@ const upload = multer({
     }
   },
   onError: (err, next) => {
-    console.error(err); 
+    console.error(err);
     next(err); // Pass the error to the next middleware
   }
 });
@@ -232,16 +232,19 @@ app.get('/dashboard/edit-item/:id', requireAuth, (req, res) => {
   });
 });
 
-// Update item route
-app.post('/dashboard/update-item/:id', requireAuth, upload.fields([
+app.post('/dashboard/edit-item', requireAuth, upload.fields([
   { name: 'image', maxCount: 1 },
   { name: 'measure', maxCount: 1 },
 ]), (req, res) => {
-  const itemId = req.params.id;
-  const { title, description, price, size, type } = req.body;
+  // Retrieve the item details from the request body
+  const { id, title, description, price, size, type } = req.body;
 
+  // Retrieve the filenames of the uploaded files
+  const imageFile = req.files['image'] ? req.files['image'][0].filename : null;
+  const measureFile = req.files['measure'] ? req.files['measure'][0].filename : null;
+
+  // Read the JSON file
   const filePath = path.join(__dirname, 'data', 'items.json');
-
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
@@ -249,45 +252,72 @@ app.post('/dashboard/update-item/:id', requireAuth, upload.fields([
       return;
     }
 
+    // Parse the JSON data
     const items = JSON.parse(data);
-    const itemIndex = items.findIndex((item) => item.id === itemId);
-    if (itemIndex === -1) {
+
+    // Find the item to edit based on the ID
+    const itemIndex = items.findIndex(item => item.id === id);
+    const editItem = items[itemIndex];
+
+    if (!editItem) {
       res.status(404).send('Item not found');
       return;
     }
 
-    // Retrieve the filenames of the uploaded files
-    const image = req.files['image'] ? req.files['image'][0].filename : items[itemIndex].image;
-    const measure = req.files['measure'] ? req.files['measure'][0].filename : items[itemIndex].measure;
 
-    // Update the item object
-    items[itemIndex] = {
-      id: itemId,
-      title,
-      description,
-      price,
-      size,
-      image: `assetts/shop/${image}`,
-      measure: `assetts/shop/${measure}`,
-      type,
-    };
 
-    fs.writeFile(filePath, JSON.stringify(items, null, 2), 'utf8', (err) => {
+
+    // Get the existing item
+    const existingItem = items[itemIndex];
+
+    // Update the properties if the corresponding form input is provided
+    if (title.trim() !== '') {
+      existingItem.title = title;
+    }
+
+    if (description.trim() !== '') {
+      existingItem.description = description;
+    }
+
+    if (size.trim() !== '') {
+      existingItem.size = size;
+    }
+
+    if (price.trim() !== '') {
+      existingItem.price = price;
+    }
+
+    // Check if any image file is uploaded
+    if (imageFile) {
+      existingItem.image = `assetts/shop/${imageFile}`;
+    } else {
+      // No file uploaded, retain the original image if existingItem and existingItem.image are defined
+      if (existingItem && existingItem.image) {
+        existingItem.image = `assetts/shop/${existingItem.image}`;
+      }
+    }
+
+    // Write the updated JSON data back to the file
+    fs.writeFile(filePath, JSON.stringify(items, null, 2), (err) => {
       if (err) {
         console.error(err);
+        res.status(500).send('Error writing JSON file');
         return;
       }
 
-      console.log('Item updated successfully.');
       res.redirect('/dashboard');
     });
   });
 });
 
-// Remove item route
-app.post('/dashboard/remove-item/:id', requireAuth, (req, res) => {
-  const itemId = req.params.id;
 
+
+
+// Remove item route
+app.post('/dashboard/remove-item/', requireAuth, (req, res) => {
+  const itemId = req.body.id;
+  console.log('Received itemId:', itemId);
+  console.log('Received req.body.id:', req.body.id);
   const filePath = path.join(__dirname, 'data', 'items.json');
 
   fs.readFile(filePath, 'utf8', (err, data) => {
@@ -298,8 +328,14 @@ app.post('/dashboard/remove-item/:id', requireAuth, (req, res) => {
     }
 
     const items = JSON.parse(data);
-    const itemIndex = items.findIndex((item) => item.id === itemId);
+
+    // Find the index of the item in the array based on the provided itemId
+    const itemIndex = items.findIndex(item => item.id === itemId);
+    console.log('Item index:', itemIndex);
+
+    // Check if the item exists
     if (itemIndex === -1) {
+      console.error('Item not found:', itemId);
       res.status(404).send('Item not found');
       return;
     }
@@ -307,9 +343,11 @@ app.post('/dashboard/remove-item/:id', requireAuth, (req, res) => {
     // Remove the item from the array
     items.splice(itemIndex, 1);
 
+    // Write the updated JSON data back to the file
     fs.writeFile(filePath, JSON.stringify(items, null, 2), 'utf8', (err) => {
       if (err) {
         console.error(err);
+        res.status(500).send('Error writing to JSON file');
         return;
       }
 
@@ -321,6 +359,8 @@ app.post('/dashboard/remove-item/:id', requireAuth, (req, res) => {
 
 
 
+
 app.listen(3000, () => {
   console.log('Server started on port 3000');
 });
+

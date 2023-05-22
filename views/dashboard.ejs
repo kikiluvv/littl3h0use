@@ -86,14 +86,14 @@
                         <h2 class="preview-header">New Item Preview</h2>
                         <div id="add-preview" class="preview">
                             <div class="preview-left">
-                                <img id="preview-img" src="/assetts/shop/placeholder.jpg">
+                                <img class="preview-img" id="preview-img1" src="/assetts/shop/placeholder.jpg">
                             </div>
                             <div class="preview-right">
-                                <h2 id="preview-title"></h2>
-                                <p id="preview-description"></p>
+                                <h2 class="preview-title" id="preview-title1"></h2>
+                                <p class="preview-description" id="preview-description1"></p>
                                 <hr class="preview-hr">
-                                <p id="preview-size"></p>
-                                <p id="preview-price"></p>
+                                <p class="preview-size" id="preview-size1"></p>
+                                <p class="preview-price" id="preview-price1"></p>
                                 <hr class="preview-hr">
                                 <div class="preview-btn-wrapper">
                                     <div class="preview-btn-contain">
@@ -106,13 +106,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="control-wrapper">
-                    <form id="edit-item" action="/dashboard/edit-item" method="POST">
+                    <form id="edit-item" action="/dashboard/edit-item" method="POST" enctype="multipart/form-data">
                         <h2 style="text-decoration: underline;">Edit Item</h2>
                         <div class="input-wrapper">
-                            <input class="input" type="number" name="itemId" placeholder="Item ID" required>
-                            <input class="input" type="text" name="name" placeholder="New Item Name">
+                            <input class="input" type="number" name="itemId" id="item-id" placeholder="Item ID" required>
+                            <input class="input" type="text" name="title" placeholder="New Item Name">
                             <input class="input" type="text" name="description" placeholder="New Description"></input>
                             <input class="input" type="number" name="price" placeholder="New Price">
                             <input class="input" type="number" name="size" placeholder="New Size">
@@ -120,9 +120,9 @@
                         </div>
                         <div class="images-wrapper">
                             <label for="image">New Image</label>
-                            <input class="input" type="file" name="image" required>
+                            <input class="input" type="file" name="image">
                             <label for="measure">New Measure Image</label>
-                            <input class="input" type="file" name="measure" required>
+                            <input class="input" type="file" name="measure">
                         </div>
                         <div class="button-wrap">
                             <button class="btn form-btn" id="edit-btn" type="submit">Edit Item</button>
@@ -133,13 +133,33 @@
                 <div class="preview-wrapper">
                     <div class="preview-container">
                         <h2 class="preview-header">Edited Item Preview</h2>
+                        <div id="edit-preview" class="preview">
+                            <div class="preview-left">
+                                <img class="preview-img" id="preview-img2" src="/assetts/shop/placeholder.jpg">
+                            </div>
+                            <div class="preview-right">
+                                <h2 class="preview-title" id="preview-title2"></h2>
+                                <p class="preview-description" id="preview-description2"></p>
+                                <hr class="preview-hr">
+                                <p class="preview-size" id="preview-size2"></p>
+                                <p class="preview-price" id="preview-price2"></p>
+                                <hr class="preview-hr">
+                                <div class="preview-btn-wrapper">
+                                    <div class="preview-btn-contain">
+                                        <button class="preview-btn">Buy!</button>
+                                        <div class="btn-particles">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="control-wrapper">
                     <form id="remove-item" action="/dashboard/remove-item" method="POST">
                         <h2 style="text-decoration: underline;">Remove Item</h2>
-                        <input type="text" name="itemId" placeholder="Item ID" required>
+                        <input type="text" id="item-id2" name="itemId" placeholder="Item ID" required>
                         <div class="button-wrap">
                             <button class="btn form-btn" id="edit-btn" type="submit">Remove Item</button>
                         </div>
@@ -149,11 +169,32 @@
                 <div class="preview-wrapper">
                     <div class="preview-container">
                         <h2 class="preview-header">Removed Item Preview</h2>
+                        <div id="remove-preview" class="preview">
+                            <div class="preview-left">
+                                <img class="preview-img" id="preview-img3" src="/assetts/shop/placeholder.jpg">
+                                
+                            </div>
+                            <div class="preview-right">
+                                <h2 class="preview-title" id="preview-title3"></h2>
+                                <p class="preview-description" id="preview-description3"></p>
+                                <hr class="preview-hr">
+                                <p class="preview-size" id="preview-size3"></p>
+                                <p class="preview-price" id="preview-price3"></p>
+                                <hr class="preview-hr">
+                                <div class="preview-btn-wrapper">
+                                    <div class="preview-btn-contain">
+                                        <button class="preview-btn">Buy!</button>
+                                        <div class="btn-particles">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="help-wrapper">
-               <div class="help-popup">
+                <div class="help-popup">
                     <div class="add-help">
 
                     </div>
@@ -163,66 +204,19 @@
                     <div class="remove-help">
 
                     </div>
-               </div>
+                </div>
             </div>
-    </div>
-    <script src="/js/button.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#btn2').click(function () {
-                var redirectUrl = $(this).data('redirect');
-                window.location.href = redirectUrl;
+        </div>
+        <script src="/js/button.js"></script>
+        <script src="/js/dashboard.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#btn2').click(function () {
+                    var redirectUrl = $(this).data('redirect');
+                    window.location.href = redirectUrl;
+                });
             });
-        });
-
-    </script>
-    <script>
-        // Get references to the form and preview elements
-        const form = document.getElementById('add-item');
-        const previewImg = document.getElementById('preview-img');
-        const previewTitle = document.getElementById('preview-title');
-        const previewDescription = document.getElementById('preview-description');
-        const previewSize = document.getElementById('preview-size');
-        const previewPrice = document.getElementById('preview-price');
-
-        // Listen for form input changes
-        form.addEventListener('input', updatePreview);
-
-        // Update the preview based on form input
-        function updatePreview() {
-            // Capture form data using FormData
-            const formData = new FormData(form);
-
-            // Get the values from the form inputs
-            const title = formData.get('title');
-            const description = formData.get('description');
-            const size = formData.get('size');
-            const price = formData.get('price');
-            const imageFile = formData.get('image');
-
-            // Update the preview elements with the form values
-            previewTitle.textContent = title;
-            previewDescription.textContent = description;
-            previewSize.textContent = `Size: ${size}`;
-            previewPrice.textContent = `Price: $${price}`;
-
-            // Update the preview image if a file is selected
-            if (imageFile && imageFile.size > 0) {
-                const reader = new FileReader();
-
-                reader.onload = function (e) {
-                    previewImg.src = e.target.result;
-                };
-
-                reader.readAsDataURL(imageFile);
-            } else {
-                // Use a placeholder image if no file is selected
-                previewImg.src = '/assetts/shop/placeholder.jpg';
-            }
-
-        }
-
-    </script>
+        </script>
 </body>
 
 </html>

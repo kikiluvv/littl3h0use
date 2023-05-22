@@ -46,7 +46,9 @@
     top: -70vh;
 }
 
-
+.burger-container {
+    display: none;
+}
 
 /* Nav Button */
 .shape {
@@ -280,3 +282,29 @@
         transform: translateY(120vh);
     }
 }
+
+@media (max-width: 880px) {
+    .logo-container {
+        width: auto;
+    }
+    .nav-list {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 770px) {
+    .logo-container {
+        width: auto;
+    }
+    .nav-list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 690px) {
+    .btn{
+        font-size: large;
+    }
+}
+

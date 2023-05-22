@@ -16,12 +16,13 @@ function transitionOut() {
     var logo = document.querySelector(".logo");
     var buttons = document.querySelectorAll(".btn");
     var wrapper = document.querySelector(".shop-wrapper");
+    const navList = document.getElementById('nav-list');
 
     logo.addEventListener("click", function () {
+        navList.classList.remove('open');
         // Add the animation class
         wrapper.classList.add("pagewipe");
         nav.classList.add("reverse-nav");
-
         // Wait for the animation to complete
         var animationDuration = 2000; // 2 seconds
         setTimeout(function () {
@@ -34,7 +35,7 @@ function transitionOut() {
     buttons.forEach(function (button) {
         button.addEventListener("click", function () {
             var redirectUrl = button.dataset.redirect;
-
+            navList.classList.remove('open');
             // Add the animation class
             wrapper.classList.add("pagewipe");
             nav.classList.add("reverse-nav");
