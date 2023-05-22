@@ -92,15 +92,5 @@
     "measure": "assetts/shop/placeholder.jpg",
     "type": "placeholder",
     "link": ""
-  },
-  {
-    "id": "9",
-    "title": "hi",
-    "description": "wenis",
-    "price": "420",
-    "size": "420",
-    "image": "assetts/shop/1684537345589.JPG",
-    "measure": "assetts/shop/1684537345590.JPG",
-    "type": "hat"
   }
 ]
