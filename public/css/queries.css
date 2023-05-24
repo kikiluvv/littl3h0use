@@ -49,3 +49,35 @@
 .lock {
     z-index: -998;
 }
+
+
+@media (max-width: 600px) {
+    .background {
+        height: 150vh;
+    }
+    .shop-row {
+        flex-wrap: wrap;
+    }
+    .row-child {
+        width: 50%;
+    }
+}
+
+@media (max-width: 490px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .section {
+        width: 100%;
+    }
+    #blog {
+        margin-top: 4vh;
+    }
+    #socials {
+        width: 50%;
+    }
+    #model {
+        width: 50%;
+    }
+}

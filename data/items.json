@@ -61,6 +61,18 @@
   },
   {
     "id": "6",
+    "title": "Terry Doll",
+    "description": "New items dropping soon! Join the Newsletter for updates! :3",
+    "size": "",
+    "price": "",
+    "image": "assetts/shop/doll2.jpg",
+    "measure": "assetts/shop/doll2back.jpg",
+    "availability": "sold",
+    "type": "placeholder",
+    "link": ""
+  },
+  {
+    "id": "7",
     "title": "Multi Color Top",
     "description": "Hand-Made crochet top, Not for big bust :3",
     "size": "12in",
@@ -70,17 +82,6 @@
     "availability": "available",
     "type": "top",
     "link": "https://www.depop.com/products/littl3h0use-handmade-crop-top-26-around/"
-  },
-  {
-    "id": "7",
-    "title": "Coming Soon...",
-    "description": "New items dropping soon! Join the Newsletter for updates! :3",
-    "size": "",
-    "price": "",
-    "image": "assetts/shop/placeholder.jpg",
-    "measure": "assetts/shop/placeholder.jpg",
-    "type": "placeholder",
-    "link": ""
   },
   {
     "id": "8",

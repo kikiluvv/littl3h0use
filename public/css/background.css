@@ -159,3 +159,9 @@
     box-shadow: 28vmin 0 3.6615013282385394vmin currentColor;
 }
 /* End Background */
+
+@media (max-width: 600px) {
+    .background {
+        height: 350vh;
+    }
+}
