@@ -237,7 +237,7 @@ app.post('/dashboard/edit-item', requireAuth, upload.fields([
   { name: 'measure', maxCount: 1 },
 ]), (req, res) => {
   // Retrieve the item details from the request body
-  const { id, title, description, price, size, type, availability } = req.body;
+  const { id, title, description, price, size, type, link, availability } = req.body;
 
   // Retrieve the filenames of the uploaded files
   const imageFile = req.files['image'] ? req.files['image'][0].filename : null;
@@ -290,6 +290,10 @@ app.post('/dashboard/edit-item', requireAuth, upload.fields([
 
     if (availability.trim() !== '') {
       existingItem.availability = availability;
+    }
+
+    if (link.trim() !== '') {
+      existingItem.link = link;
     }
 
     // Check if any image file is uploaded

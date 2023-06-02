@@ -89,10 +89,10 @@
     "description": "edit or delete me pls im ugly",
     "size": "420",
     "price": "420",
-    "image": "assetts/shop/assetts/shop/1685731960350.JPG",
-    "measure": "assetts/shop/1685732101290.JPG",
-    "availability": "available",
+    "image": "assetts/shop/placeholder.jpg",
+    "measure": "assetts/shop/placeholder.jpg",
+    "availability": "",
     "type": "hat",
-    "link": ""
+    "link": "google.com"
   }
 ]
