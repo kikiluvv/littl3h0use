@@ -111,7 +111,7 @@
                     <form id="edit-item" action="/dashboard/edit-item" method="POST" enctype="multipart/form-data">
                         <h2 style="text-decoration: underline;">Edit Item</h2>
                         <div class="input-wrapper">
-                            <input class="input" type="number" name="itemId" id="item-id" placeholder="Item ID" required>
+                            <input class="input" type="number" name="id" id="item-id" placeholder="Item ID" required>
                             <input class="input" type="text" name="title" placeholder="New Item Name">
                             <input class="input" type="text" name="description" placeholder="New Description"></input>
                             <input class="input" type="number" name="price" placeholder="New Price">
@@ -119,10 +119,15 @@
                             <input class="input" type="text" name="type" placeholder="New Type">
                         </div>
                         <div class="images-wrapper">
-                            <label for="image">New Image</label>
-                            <input class="input" type="file" name="image">
-                            <label for="measure">New Measure Image</label>
-                            <input class="input" type="file" name="measure">
+                            <label class="images-input" for="image">New Image</label>
+                            <input class="images-input input" type="file" name="image">
+                            <label class="images-input" for="measure">New Measure Image</label>
+                            <input class="images-input input" type="file" name="measure">
+                            <label class="images-input" for="availability">New Availability</label>
+                            <select class="images-input input" name="availability" placeholder="New availability">
+                                <option class="images-input" value="available">Available</option>
+                                <option class="images-input" value="sold">Sold</option>
+                            </select>
                         </div>
                         <div class="button-wrap">
                             <button class="btn form-btn" id="edit-btn" type="submit">Edit Item</button>
@@ -159,7 +164,7 @@
                 <div class="control-wrapper">
                     <form id="remove-item" action="/dashboard/remove-item" method="POST">
                         <h2 style="text-decoration: underline;">Remove Item</h2>
-                        <input type="text" id="item-id2" name="itemId" placeholder="Item ID" required>
+                        <input type="text" id="item-id2" name="id" placeholder="Item ID" required>
                         <div class="button-wrap">
                             <button class="btn form-btn" id="edit-btn" type="submit">Remove Item</button>
                         </div>

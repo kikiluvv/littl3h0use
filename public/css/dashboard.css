@@ -228,6 +228,16 @@
     width: 100%;
 }
 
+.images-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.images-input {
+    width: 50%;
+}
+
 .button-wrap {
     position: relative;
     display: flex;
@@ -264,7 +274,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 15px;
     width: 100%;
     height: 100%;
@@ -338,6 +348,7 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
+    max-height: fit-content;
 }
 
 .preview-right {
@@ -354,7 +365,7 @@
   flex: 1;
   border-radius: 15px;
   padding: 5px;
-  max-height: 75%;
+  max-height: 50%;
   box-sizing: border-box;
 }
 

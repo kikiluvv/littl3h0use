@@ -133,7 +133,7 @@ function updatePreviewEdit(form, imgId, titleId, descriptionId, sizeId, priceId)
 
     // Update the preview price if input is provided; otherwise, keep the original text
     if (price.trim() !== '') {
-        previewPrice.textContent = `${price}`;
+        previewPrice.textContent = `$${price}`;
     }
 
 

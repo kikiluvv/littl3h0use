@@ -237,7 +237,7 @@ app.post('/dashboard/edit-item', requireAuth, upload.fields([
   { name: 'measure', maxCount: 1 },
 ]), (req, res) => {
   // Retrieve the item details from the request body
-  const { id, title, description, price, size, type } = req.body;
+  const { id, title, description, price, size, type, availability } = req.body;
 
   // Retrieve the filenames of the uploaded files
   const imageFile = req.files['image'] ? req.files['image'][0].filename : null;
@@ -264,9 +264,6 @@ app.post('/dashboard/edit-item', requireAuth, upload.fields([
       return;
     }
 
-
-
-
     // Get the existing item
     const existingItem = items[itemIndex];
 
@@ -287,6 +284,14 @@ app.post('/dashboard/edit-item', requireAuth, upload.fields([
       existingItem.price = price;
     }
 
+    if (type.trim() !== '') {
+      existingItem.type = type;
+    }
+
+    if (availability.trim() !== '') {
+      existingItem.availability = availability;
+    }
+
     // Check if any image file is uploaded
     if (imageFile) {
       existingItem.image = `assetts/shop/${imageFile}`;
@@ -294,6 +299,14 @@ app.post('/dashboard/edit-item', requireAuth, upload.fields([
       // No file uploaded, retain the original image if existingItem and existingItem.image are defined
       if (existingItem && existingItem.image) {
         existingItem.image = `assetts/shop/${existingItem.image}`;
+      }
+    }
+    if (measureFile) {
+      existingItem.measure = `assetts/shop/${measureFile}`;
+    } else {
+      // No file uploaded, retain the original image if existingItem and existingItem.image are defined
+      if (existingItem && existingItem.measure) {
+        existingItem.measure = `assetts/shop/${existingItem.measure}`;
       }
     }
 
@@ -314,7 +327,7 @@ app.post('/dashboard/edit-item', requireAuth, upload.fields([
 
 
 // Remove item route
-app.post('/dashboard/remove-item/', requireAuth, (req, res) => {
+app.post('/dashboard/remove-item', requireAuth, (req, res) => {
   const itemId = req.body.id;
   console.log('Received itemId:', itemId);
   console.log('Received req.body.id:', req.body.id);
